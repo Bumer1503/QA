@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "8005c48f-c0ee-4121-923a-6836b89e415d",
+		"name": "​​Lesson 18. Api Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26050279"
+	},
+	"item": [
+		{
+			"name": "POST positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Vitaliy 2\",\r\n\"age\":\"25\",\r\n\"gender\":\"male\",\r\n\"city\":\"Zaporizhia\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{schema}}://{{baseURL}}/{{userResource}}",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"{{userResource}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Vitaliy 2\",\r\n\"age\":\"25\",\r\n\"gender\":\"male\",\r\n\"city\":\"Zaporizhia\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{schema}}://{{baseURL}}/{{userResource}}",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"{{userResource}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET positive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{schema}}://{{baseURL}}/{{userResource}}?id={{userID}}",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"{{userResource}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET negative",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{schema}}://{{baseURL}}/{{userResource}}?id={{userID}}",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"{{userResource}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH positive",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\":\"{{userID}}\",     \r\n\"name\":\"Vitaliy PRo\",\r\n\"age\": \"25\",\r\n\"gender\":\"female\",\r\n\"city\":\"Zaporizhia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{schema}}://{{baseURL}}/{{userResource}}",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"{{userResource}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH negative",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\":\"{{userID}}\",     \r\n\"name\":\"Vitaliy PRo\",\r\n\"age\": \"25\",\r\n\"gender\":\"female\",\r\n\"city\":\"Zaporizhia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{schema}}://{{baseURL}}/{{userResource}}",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"{{userResource}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE positive",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE negative",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "schema",
+			"value": "https",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+			"type": "string"
+		},
+		{
+			"key": "userResource",
+			"value": "users",
+			"type": "string"
+		},
+		{
+			"key": "userID",
+			"value": "cfe95dab-1259-4357-9cf5-c2449f79ae58",
+			"type": "string"
+		}
+	]
+}
